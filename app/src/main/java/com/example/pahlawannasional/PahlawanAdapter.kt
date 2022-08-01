@@ -14,15 +14,18 @@ import com.google.gson.Gson
 class PahlawanAdapter(var context: Context) :
     RecyclerView.Adapter<PahlawanAdapter.MyPahlawanHolder>() {
 
+    //Memanggil Function Helper untuk membaca data json
     private val pahlawanList: List<DaftarPahlawanItem> = Gson()
         .fromJson(
             getJsonDataFromAsset(context, "pahlawan_nasional.json").toString(),
             DaftarPahlawan::class.java
         ).daftarPahlawan as List<DaftarPahlawanItem>
 
+    //Membuat ViewHolder dan mengambil Layout Item dari XML menggunakan Binding
     inner class MyPahlawanHolder(val binding: RowItemPahlawanBinding) :
         RecyclerView.ViewHolder(binding.root)
 
+    //Mengambil Layout
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyPahlawanHolder(
         RowItemPahlawanBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
@@ -30,10 +33,10 @@ class PahlawanAdapter(var context: Context) :
     override fun onBindViewHolder(holder: MyPahlawanHolder, position: Int) {
         val dataPahlawan = pahlawanList[position]
         holder.binding.apply {
-            tvNameHero.text = dataPahlawan.nama
-            tvDescHero.text = dataPahlawan.history
-            tvAge.text = dataPahlawan.usia
-            tvDomicileHero.text = dataPahlawan.asal
+                tvNameHero.text = dataPahlawan.nama
+                tvDescHero.text = dataPahlawan.history
+                tvAge.text = dataPahlawan.usia
+                tvDomicileHero.text = dataPahlawan.asal
 
             Glide.with(imgHero).load(dataPahlawan.img).placeholder(R.drawable.ic_loading)
                 .into(imgHero)

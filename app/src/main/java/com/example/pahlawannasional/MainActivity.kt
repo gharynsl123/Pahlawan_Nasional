@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+
+//function untuk mengambil data dari json
 fun getJsonDataFromAsset(context: Context, fileName: String): String? {
     val jsonString: String
     try {
