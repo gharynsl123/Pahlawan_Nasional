@@ -66,4 +66,6 @@ dependencies {
 
     //recyclerView
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    implementation 'androidx.paging:paging-runtime:3.1.1'
 }

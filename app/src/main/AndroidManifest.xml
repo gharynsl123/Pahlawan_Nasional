@@ -12,12 +12,12 @@
         android:supportsRtl="true">
         <activity
             android:name=".DetailActivity"
-            android:theme="@style/DetailActionBar"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/DetailActionBar" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.PahlawanNasional"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.PahlawanNasional">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

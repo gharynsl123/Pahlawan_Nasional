@@ -1,21 +1,16 @@
 package com.example.pahlawannasional
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.pahlawannasional.databinding.ActivityMainBinding
-import com.example.pahlawannasional.respone.DaftarPahlawanItem
-import org.json.JSONException
-import org.json.JSONObject
 import java.io.IOException
-import java.nio.charset.StandardCharsets
 
 class MainActivity : AppCompatActivity() {
 
-    private var _binding : ActivityMainBinding? = null
+    private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding as ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,11 +18,17 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+        supportActionBar?.setCustomView(R.layout.center_title)
+
         binding.rvHero.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = PahlawanAdapter(this@MainActivity)
         }
+
     }
+
+
 }
 
 

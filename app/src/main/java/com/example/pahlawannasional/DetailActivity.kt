@@ -1,7 +1,7 @@
 package com.example.pahlawannasional
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.pahlawannasional.databinding.ActivityDetailBinding
 import com.example.pahlawannasional.respone.DaftarPahlawan
@@ -19,6 +19,8 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val data = intent.getParcelableExtra<DaftarPahlawan>(DETAIL_KEY) as DaftarPahlawanItem
+
+        supportActionBar?.title = data.nama
         Glide.with(this).load(data.img).into(binding.imgHeroDetail)
 
         binding.apply {
@@ -40,7 +42,7 @@ class DetailActivity : AppCompatActivity() {
         return true
     }
 
-    companion object{
+    companion object {
         const val DETAIL_KEY = "data_pahlawan"
     }
 }

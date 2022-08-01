@@ -33,10 +33,10 @@ class PahlawanAdapter(var context: Context) :
     override fun onBindViewHolder(holder: MyPahlawanHolder, position: Int) {
         val dataPahlawan = pahlawanList[position]
         holder.binding.apply {
-                tvNameHero.text = dataPahlawan.nama
-                tvDescHero.text = dataPahlawan.history
-                tvAge.text = dataPahlawan.usia
-                tvDomicileHero.text = dataPahlawan.asal
+            tvNameHero.text = dataPahlawan.nama
+            tvDescHero.text = dataPahlawan.history
+            tvAge.text = dataPahlawan.usia
+            tvDomicileHero.text = dataPahlawan.asal
 
             Glide.with(imgHero).load(dataPahlawan.img).placeholder(R.drawable.ic_loading)
                 .into(imgHero)
