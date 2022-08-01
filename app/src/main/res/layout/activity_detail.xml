@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgHeroDetail"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lokasiMakam"
+            style="@style/TextAppearance.Subtitle"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:text="Lokasi Makam :"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgHeroDetail" />
+
+        <TextView
+            android:id="@+id/lokasiMakamDetail"
+            style="@style/TextAppearance.Subtitle"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:text="@string/makam_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lokasiMakam"
+            app:layout_constraintTop_toBottomOf="@id/imgHeroDetail" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHeroDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            android:elevation="2dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintTop_toBottomOf="@id/lokasiMakamDetail">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/TextAppearance.Subtitle"
+                    android:text="name :"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNameDetail"
+                    style="@style/TextAppearance.Subtitle"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/item_name"
+                    app:layout_constraintStart_toEndOf="@id/tvName"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvAsal"
+                    style="@style/TextAppearance.Subtitle"
+                    android:text="Asal :"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                <TextView
+                    android:id="@+id/tvAsalDetail"
+                    style="@style/TextAppearance.Subtitle"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/domicile_content"
+                    app:layout_constraintStart_toEndOf="@id/tvName"
+                    app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                <TextView
+                    android:id="@+id/tvLahir"
+                    style="@style/TextAppearance.Subtitle"
+                    android:text="Lahir :"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvAsalDetail" />
+
+                <TextView
+                    android:id="@+id/tvLahirDetail"
+                    style="@style/TextAppearance.Subtitle"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/content_lahir"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvName"
+                    app:layout_constraintTop_toBottomOf="@id/tvAsalDetail" />
+
+                <TextView
+                    android:id="@+id/tvUsia"
+                    style="@style/TextAppearance.Subtitle"
+                    android:text="Usia :"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLahirDetail" />
+
+                <TextView
+                    android:id="@+id/tvUsiaDetail"
+                    style="@style/TextAppearance.Subtitle"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/age_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvName"
+                    app:layout_constraintTop_toBottomOf="@id/tvLahirDetail" />
+
+                <TextView
+                    android:id="@+id/tvGugur"
+                    style="@style/TextAppearance.Subtitle"
+                    android:text="Gugur :"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvUsiaDetail" />
+
+                <TextView
+                    android:id="@+id/tvGugurDetail"
+                    style="@style/TextAppearance.Subtitle"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/gugur_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvName"
+                    app:layout_constraintTop_toBottomOf="@id/tvUsiaDetail" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/image_header_card"
+            android:padding="25dp"
+            app:layout_constraintTop_toBottomOf="@id/cardHeroDetail">
+
+            <TextView
+                android:id="@+id/tvDescDetail"
+                style="@style/TextAppearance.Subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:justificationMode="inter_word"
+                android:text="@string/content_decs" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

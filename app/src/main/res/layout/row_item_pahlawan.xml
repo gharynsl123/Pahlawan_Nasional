@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="15dp"
+    android:elevation="2dp"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_hero"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_domicile_hero"
+            style="@style/TextAppearance.Domicile"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/domicile_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_hero"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_hero" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            style="@style/TextAppearance.Old"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/age_content"
+            app:layout_constraintStart_toEndOf="@+id/img_hero"
+            app:layout_constraintTop_toBottomOf="@+id/tv_domicile_hero" />
+
+        <TextView
+            android:id="@+id/tv_name_hero"
+            style="@style/TextAppearance.Title"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:ellipsize="end"
+            android:text="@string/item_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_hero"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_desc_hero"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:text="@string/content_decs"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_hero" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
