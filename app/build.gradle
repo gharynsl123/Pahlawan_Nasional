@@ -20,6 +20,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", BaseUrl)
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -66,6 +69,5 @@ dependencies {
 
     //recyclerView
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-
     implementation 'androidx.paging:paging-runtime:3.1.1'
 }

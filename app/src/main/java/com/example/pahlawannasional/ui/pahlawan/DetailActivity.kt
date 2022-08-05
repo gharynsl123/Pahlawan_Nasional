@@ -1,11 +1,11 @@
-package com.example.pahlawannasional
+package com.example.pahlawannasional.ui.pahlawan
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.example.pahlawannasional.data.respone.DaftarPahlawan
+import com.example.pahlawannasional.data.respone.DaftarPahlawanItem
 import com.example.pahlawannasional.databinding.ActivityDetailBinding
-import com.example.pahlawannasional.respone.DaftarPahlawan
-import com.example.pahlawannasional.respone.DaftarPahlawanItem
 
 class DetailActivity : AppCompatActivity() {
 

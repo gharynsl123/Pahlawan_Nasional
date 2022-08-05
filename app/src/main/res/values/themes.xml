@@ -12,6 +12,16 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="floatingActionButtonStyle">@style/FabRectangleRadius</item>
+    </style>
+
+    <style name="FabStyle" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/FabRectangleRadius</item>
+    </style>
+
+    <style name="FabRectangleRadius" parent="FabStyle">
+        <item name="cornerSize">30%</item>
     </style>
 
     <style name="DetailActionBar" parent="Theme.PahlawanNasional">

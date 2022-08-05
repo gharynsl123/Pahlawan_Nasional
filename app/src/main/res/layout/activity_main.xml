@@ -4,25 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="10dp"
+    tools:context="ui.MainActivity">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
+
+    <Button
+        android:id="@+id/btnRvJson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/Data_json"
+        android:textAllCaps="false"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHero"
+    <Button
+        android:id="@+id/btnRvListUsers"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:scrollbars="vertical"
-        app:fastScrollEnabled="true"
-        app:fastScrollHorizontalThumbDrawable="@drawable/thumb_drawable"
-        app:fastScrollHorizontalTrackDrawable="@drawable/line_drawable"
-        app:fastScrollVerticalThumbDrawable="@drawable/thumb_drawable"
-        app:fastScrollVerticalTrackDrawable="@drawable/line_drawable"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
-        tools:listitem="@layout/row_item_pahlawan" />
+        android:layout_height="wrap_content"
+        android:text="@string/ListUser"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnRvJson" />
+
+    <Button
+        android:id="@+id/btnRvSearchUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/UserSearch"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnRvListUsers" />
+
+    <Button
+        android:id="@+id/btnRvRepo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/DataRepoGithub"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btnRvSearchUsers" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

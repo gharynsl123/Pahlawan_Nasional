@@ -7,4 +7,8 @@
     <string name="content_lahir">Selasa, 3 Desember 1918 di Kotanopan, Mandailing Natal, Sumatera Utara</string>
     <string name="gugur_content">Selasa Wage, 5 September 2000 di Jakarta, Indonesia</string>
     <string name="makam_content">Taman Makam Pahlawan (TMP) Kalibata, Jakarta.</string>
+    <string name="Data_json">Display Data From JSON</string>
+    <string name="ListUser">Display Data List Users From API Github</string>
+    <string name="UserSearch">Display Users search From API Github</string>
+    <string name="DataRepoGithub">Display Repository Git From API Github</string>
 </resources>

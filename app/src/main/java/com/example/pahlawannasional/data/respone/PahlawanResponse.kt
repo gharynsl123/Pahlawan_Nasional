@@ -1,4 +1,4 @@
-package com.example.pahlawannasional.respone
+package com.example.pahlawannasional.data.respone
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

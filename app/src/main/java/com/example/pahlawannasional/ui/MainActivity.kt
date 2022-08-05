@@ -1,12 +1,12 @@
-package com.example.pahlawannasional
+package com.example.pahlawannasional.ui
 
-import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pahlawannasional.R
 import com.example.pahlawannasional.databinding.ActivityMainBinding
-import java.io.IOException
+import com.example.pahlawannasional.ui.pahlawan.JsonActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,25 +21,15 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.center_title)
 
-        binding.rvHero.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = PahlawanAdapter(this@MainActivity)
+        binding.apply {
+            btnRvJson.setOnClickListener {
+                startActivity(Intent(this@MainActivity, JsonActivity::class.java))
+            }
+            btnRvListUsers.setOnClickListener {
+                startActivity(Intent(this@MainActivity, ListUserActivity::class.java))
+            }
         }
-
     }
-
-
 }
 
 
-//function untuk mengambil data dari json
-fun getJsonDataFromAsset(context: Context, fileName: String): String? {
-    val jsonString: String
-    try {
-        jsonString = context.assets.open(fileName).bufferedReader().use { it.readText() }
-    } catch (ioException: IOException) {
-        ioException.printStackTrace()
-        return null
-    }
-    return jsonString
-}
