@@ -7,14 +7,18 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.PahlawanNasional"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".ui.SearchRepoActivity"
+            android:name=".ui.listuser.ListUserActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SearchUserActivity"
+            android:name=".ui.searchrepo.SearchRepoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.searchuser.SearchUserActivity"
             android:exported="false" />
         <activity
             android:name=".ui.pahlawan.JsonActivity"

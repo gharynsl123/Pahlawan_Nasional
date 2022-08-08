@@ -1,12 +1,12 @@
-package com.example.pahlawannasional.ui
+package com.example.pahlawannasional.ui.searchrepo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pahlawannasional.R
 
-class SearchUserActivity : AppCompatActivity() {
+class SearchRepoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_user)
+        setContentView(R.layout.activity_search_repo)
     }
 }

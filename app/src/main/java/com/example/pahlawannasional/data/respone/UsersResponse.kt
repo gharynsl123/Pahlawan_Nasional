@@ -2,17 +2,14 @@ package com.example.pahlawannasional.data.respone
 
 import com.google.gson.annotations.SerializedName
 
-data class UsersResponse(
 
-    @field:SerializedName("GithubResponse")
-    val githubResponse: List<UsersResponseItem?>? = null
+//dan inilah yang namanya encapsulasi
+data class UsersResponse(
+    @field:SerializedName("items")
+    val items : List<UsersResponseItem>? = null
 )
 
 data class UsersResponseItem(
-
-    @field:SerializedName("gists_url")
-    val gistsUrl: String? = null,
-
     @field:SerializedName("repos_url")
     val reposUrl: String? = null,
 
