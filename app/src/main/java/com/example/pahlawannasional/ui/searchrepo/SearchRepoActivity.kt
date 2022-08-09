@@ -16,7 +16,7 @@ class SearchRepoActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this)[SearchRepoViewModel::class.java]
 
         viewModel.searchRepositories(searchRepoUser)
-        viewModel.getSearchRepo().observe(this){
+        viewModel.getSearchRepo().observe(this) {
             Log.i("DataRepositories", "onCreate: $it")
         }
     }

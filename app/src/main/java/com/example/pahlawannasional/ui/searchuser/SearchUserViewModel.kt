@@ -14,15 +14,20 @@ class SearchUserViewModel : ViewModel() {
     val listUser = MutableLiveData<UsersResponse>()
 
     fun searchUser(searchViewString: String) {
-        ApiConfig.getApiSercive().searchUsers(searchViewString).enqueue(object : Callback<UsersResponse> {
-            override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
-                listUser.value = response.body()
-            }
+        ApiConfig.getApiSercive().searchUsers(searchViewString)
+            .enqueue(object : Callback<UsersResponse> {
+                override fun onResponse(
+                    call: Call<UsersResponse>,
+                    response: Response<UsersResponse>
+                ) {
+                    listUser.value = response.body()
+                }
 
-            override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
-                Log.e("error", "OnFailure: $t")
-            }
-        })
+                override fun onFailure(call: Call<UsersResponse>, t: Throwable) {
+                    Log.e("error", "OnFailure: $t")
+                }
+            })
     }
+
     fun getSearchUser(): LiveData<UsersResponse> = listUser
 }

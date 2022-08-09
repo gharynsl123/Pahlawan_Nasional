@@ -10,20 +10,21 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class SearchRepoViewModel: ViewModel() {
+class SearchRepoViewModel : ViewModel() {
 
     val repoUser = MutableLiveData<RepoRespone>()
 
     fun searchRepositories(searchRepoUser: String) {
-        ApiConfig.getApiSercive().getUserRepositories(searchRepoUser).enqueue(object : Callback<RepoRespone> {
-             override fun onResponse(call: Call<RepoRespone>, response: Response<RepoRespone>) {
-                repoUser.value = response.body()
-            }
+        ApiConfig.getApiSercive().getUserRepositories(searchRepoUser)
+            .enqueue(object : Callback<RepoRespone> {
+                override fun onResponse(call: Call<RepoRespone>, response: Response<RepoRespone>) {
+                    repoUser.value = response.body()
+                }
 
-            override fun onFailure(call: Call<RepoRespone>, t: Throwable) {
-                Log.e("error", "OnFailure: $t")
-            }
-        })
+                override fun onFailure(call: Call<RepoRespone>, t: Throwable) {
+                    Log.e("error", "OnFailure: $t")
+                }
+            })
     }
 
     fun getSearchRepo(): LiveData<RepoRespone> = repoUser

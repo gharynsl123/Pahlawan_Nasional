@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 //dan inilah yang namanya encapsulasi
 data class UsersResponse(
     @field:SerializedName("items")
-    val items : List<UsersResponseItem>? = null
+    val items: List<UsersResponseItem>? = null
 )
 
 data class UsersResponseItem(
@@ -27,9 +27,6 @@ data class UsersResponseItem(
 
     @field:SerializedName("type")
     val type: String? = null,
-
-    @field:SerializedName("url")
-    val url: String? = null,
 
     @field:SerializedName("subscriptions_url")
     val subscriptionsUrl: String? = null,

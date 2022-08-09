@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v?.id){
+        when (v?.id) {
             R.id.btnRvJson -> startActivity(Intent(this, JsonActivity::class.java))
             R.id.btnRvListUsers -> startActivity(Intent(this, ListUserActivity::class.java))
             R.id.btnRvSearchUsers -> startActivity(Intent(this, SearchUserActivity::class.java))

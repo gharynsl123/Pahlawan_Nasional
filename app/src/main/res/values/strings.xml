@@ -11,4 +11,5 @@
     <string name="ListUser">Display Data List Users From API Github</string>
     <string name="UserSearch">Display Users search From API Github</string>
     <string name="DataRepoGithub">Display Repository Git From API Github</string>
+    <string name="item_name_git">errfree</string>
 </resources>
