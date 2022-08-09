@@ -17,6 +17,6 @@ data class RepoResponeItem(
     @field:SerializedName("description")
     val description: String? = null,
 
-    @field:SerializedName("topic")
+    @field:SerializedName("topics")
     val topic: List<String>
 )

@@ -14,7 +14,7 @@ class SearchUserViewModel : ViewModel() {
     val listUser = MutableLiveData<UsersResponse>()
 
     fun searchUser(searchViewString: String) {
-        ApiConfig.getApiSercive().searchUsers("Lala").enqueue(object : Callback<UsersResponse> {
+        ApiConfig.getApiSercive().searchUsers(searchViewString).enqueue(object : Callback<UsersResponse> {
             override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
                 listUser.value = response.body()
             }

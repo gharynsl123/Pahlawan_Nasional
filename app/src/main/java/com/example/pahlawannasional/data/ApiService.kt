@@ -1,5 +1,6 @@
 package com.example.pahlawannasional.data
 
+import com.example.pahlawannasional.data.respone.RepoRespone
 import com.example.pahlawannasional.data.respone.UsersResponse
 import com.example.pahlawannasional.data.respone.UsersResponseItem
 import retrofit2.Call
@@ -16,8 +17,8 @@ interface ApiService {
         @Query("q") userName: String,
     ): Call<UsersResponse>
 
-    @GET("users/repositories")
+    @GET("search/repositories")
     fun getUserRepositories(
         @Query("q") repositoriesName: String,
-    ): Call<List<UsersResponseItem>>
+    ): Call<RepoRespone>
 }
