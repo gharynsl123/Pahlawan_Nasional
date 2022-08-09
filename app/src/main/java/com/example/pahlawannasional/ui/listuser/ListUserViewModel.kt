@@ -12,7 +12,7 @@ import retrofit2.Response
 class ListUserViewModel : ViewModel() {
 
     //list ini digunakan sebagai penampung data setelah diambil dari API
-    val listUser = MutableLiveData<ArrayList<UsersResponseItem>>()
+    val listUser = MutableLiveData<List<UsersResponseItem>>()
 
     fun getListUser(){
         ApiConfig.getApiSercive().getListUsers().enqueue(object : Callback<List<UsersResponseItem>>{
@@ -22,7 +22,7 @@ class ListUserViewModel : ViewModel() {
                 response: Response<List<UsersResponseItem>>
             ) {
                 //mengisi listUser Yang masih kosong dengan data Response
-                listUser.postValue(response.body() as ArrayList<UsersResponseItem>)
+                listUser.postValue(response.body())
             }
 
             override fun onFailure(call: Call<List<UsersResponseItem>>, t: Throwable) {
@@ -32,5 +32,5 @@ class ListUserViewModel : ViewModel() {
         })
     }
 
-    fun getResultListUsers() : LiveData<ArrayList<UsersResponseItem>> = listUser
+    fun getResultListUsers() : LiveData<List<UsersResponseItem>> = listUser
 }

@@ -14,5 +14,10 @@ interface ApiService {
     @GET("search/users")
     fun searchUsers(
         @Query("q") userName: String,
-    ): Call<List<UsersResponse>>
+    ): Call<UsersResponse>
+
+    @GET("users/repositories")
+    fun getUserRepositories(
+        @Query("q") repositoriesName: String,
+    ): Call<List<UsersResponseItem>>
 }
