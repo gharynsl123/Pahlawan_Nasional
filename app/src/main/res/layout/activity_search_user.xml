@@ -5,4 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.searchuser.SearchUserActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_item_user"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

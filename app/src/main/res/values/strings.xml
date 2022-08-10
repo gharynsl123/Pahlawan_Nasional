@@ -12,4 +12,10 @@
     <string name="UserSearch">Display Users search From API Github</string>
     <string name="DataRepoGithub">Display Repository Git From API Github</string>
     <string name="item_name_git">errfree</string>
+    <string name="text_total_count">total count</string>
+    <string name="full_nameRepo">john/hamburgers</string>
+    <string name="repo_name">hamburgers</string>
+    <string name="createdRepo">2016–02–27:02:16:24Z</string>
+    <string name="UpdateAt">2016–02–27:02:16:24Z</string>
+    <string name="PushAt">2016–02–27T02:16:24Z</string>
 </resources>
