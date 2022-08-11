@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".ui.pahlawan.DetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,10 +21,9 @@
         <TextView
             android:id="@+id/lokasiMakam"
             style="@style/TextAppearance.Subtitle"
-            android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
-            android:text="Lokasi Makam :"
+            android:text="@string/lokasi_makam"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgHeroDetail" />
 
@@ -35,7 +33,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
-            android:text="@string/makam_content"
+            android:text="@string/lokasi_makam"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/lokasiMakam"
             app:layout_constraintTop_toBottomOf="@id/imgHeroDetail" />
@@ -58,7 +56,7 @@
                 <TextView
                     android:id="@+id/tvName"
                     style="@style/TextAppearance.Subtitle"
-                    android:text="name :"
+                    android:text="@string/name"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +71,7 @@
                 <TextView
                     android:id="@+id/tvAsal"
                     style="@style/TextAppearance.Subtitle"
-                    android:text="Asal :"
+                    android:text="@string/asal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvName" />
 
@@ -88,7 +86,7 @@
                 <TextView
                     android:id="@+id/tvLahir"
                     style="@style/TextAppearance.Subtitle"
-                    android:text="Lahir :"
+                    android:text="@string/lahir"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvAsalDetail" />
 
@@ -104,7 +102,7 @@
                 <TextView
                     android:id="@+id/tvUsia"
                     style="@style/TextAppearance.Subtitle"
-                    android:text="Usia :"
+                    android:text="@string/usia"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvLahirDetail" />
 
@@ -120,7 +118,7 @@
                 <TextView
                     android:id="@+id/tvGugur"
                     style="@style/TextAppearance.Subtitle"
-                    android:text="Gugur :"
+                    android:text="@string/gugur"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvUsiaDetail" />
 
@@ -148,12 +146,10 @@
                 android:id="@+id/tvDescDetail"
                 style="@style/TextAppearance.Subtitle"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:justificationMode="inter_word"
                 android:text="@string/content_decs" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.core.widget.NestedScrollView>

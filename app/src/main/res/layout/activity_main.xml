@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="10dp"
     tools:context="ui.MainActivity">
-
 
     <Button
         android:id="@+id/btnRvJson"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Data_json"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btnRvListUsers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/ListUser"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/btnRvJson" />
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btnRvSearchUsers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/UserSearch"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/btnRvListUsers" />
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/btnRvRepo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/DataRepoGithub"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/btnRvSearchUsers" />
+        android:textAllCaps="false"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

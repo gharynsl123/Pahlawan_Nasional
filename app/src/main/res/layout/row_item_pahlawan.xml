@@ -16,8 +16,7 @@
             android:id="@+id/img_hero"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,5 +68,4 @@
             app:layout_constraintTop_toBottomOf="@id/img_hero" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>
