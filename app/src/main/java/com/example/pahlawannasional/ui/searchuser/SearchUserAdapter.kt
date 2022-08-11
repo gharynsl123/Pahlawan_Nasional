@@ -7,7 +7,9 @@ import com.bumptech.glide.Glide
 import com.example.pahlawannasional.data.respone.UsersResponseItem
 import com.example.pahlawannasional.databinding.RowItemUserBinding
 
-class SearchUserAdapter(var listUserGithub: List<UsersResponseItem>) : RecyclerView.Adapter<SearchUserAdapter.MyUserHolder>() {
+class SearchUserAdapter(var listUserGithub: List<UsersResponseItem>) :
+    RecyclerView.Adapter<SearchUserAdapter.MyUserHolder>() {
+
     inner class MyUserHolder(val binding: RowItemUserBinding) :
         RecyclerView.ViewHolder(binding.root)
 
@@ -24,4 +26,5 @@ class SearchUserAdapter(var listUserGithub: List<UsersResponseItem>) : RecyclerV
     }
 
     override fun getItemCount(): Int = listUserGithub.size
+
 }

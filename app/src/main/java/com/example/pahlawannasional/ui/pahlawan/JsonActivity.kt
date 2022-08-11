@@ -9,22 +9,21 @@ import com.example.pahlawannasional.databinding.ActivityJsonBinding
 import java.io.IOException
 
 class JsonActivity : AppCompatActivity() {
+
     private var _binding: ActivityJsonBinding? = null
     private val binding get() = _binding as ActivityJsonBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityJsonBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.apply {
-            rvHero.apply {
-                layoutManager = LinearLayoutManager(this@JsonActivity)
-                adapter = PahlawanAdapter(this@JsonActivity)
-            }
+            rvHero.layoutManager = LinearLayoutManager(this@JsonActivity)
+            rvHero.adapter = PahlawanAdapter(this@JsonActivity)
 
             fabBackTop.setOnClickListener {
                 rvHero.smoothScrollToPosition(0)
-
             }
 
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

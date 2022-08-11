@@ -10,19 +10,13 @@ import com.example.pahlawannasional.R
 import com.example.pahlawannasional.data.respone.UsersResponseItem
 import com.example.pahlawannasional.databinding.RowItemUserBinding
 
-class ListUserAdapter(
-    var ctx: Context,
-    var listUserGithub: List<UsersResponseItem>
-) :
+class ListUserAdapter(var ctx: Context, var listUserGithub: List<UsersResponseItem>) :
     RecyclerView.Adapter<ListUserAdapter.MyUserHolder>() {
-
 
     inner class MyUserHolder(val binding: RowItemUserBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyUserHolder(
-
         RowItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 

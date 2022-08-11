@@ -18,7 +18,6 @@ import java.util.*
 class PahlawanAdapter(var context: Context) :
     RecyclerView.Adapter<PahlawanAdapter.MyPahlawanHolder>(), Filterable {
 
-    //Memanggil Function Helper untuk membaca data json
     private val pahlawanList: MutableList<DaftarPahlawanItem> = (Gson()
         .fromJson(
             getJsonDataFromAsset(context, "pahlawan_nasional.json").toString(),
@@ -50,7 +49,6 @@ class PahlawanAdapter(var context: Context) :
         }
     }
 
-
     //Membuat ViewHolder dan mengambil Layout Item dari XML menggunakan Binding
     inner class MyPahlawanHolder(val binding: RowItemPahlawanBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -68,8 +66,7 @@ class PahlawanAdapter(var context: Context) :
             tvAge.text = dataPahlawan.usia
             tvDomicileHero.text = dataPahlawan.asal
 
-            Glide.with(imgHero).load(dataPahlawan.img).placeholder(R.drawable.ic_loading)
-                .into(imgHero)
+            Glide.with(imgHero).load(dataPahlawan.img).placeholder(R.drawable.ic_loading).into(imgHero)
 
             holder.itemView.setOnClickListener {
                 val intent = Intent(context, DetailActivity::class.java)
@@ -82,5 +79,4 @@ class PahlawanAdapter(var context: Context) :
     override fun getItemCount(): Int = pahlawanList.size
 
     override fun getFilter(): Filter = heroFilter
-
 }

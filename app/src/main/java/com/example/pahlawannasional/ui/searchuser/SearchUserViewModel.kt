@@ -11,15 +11,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class SearchUserViewModel : ViewModel() {
+
     val listUser = MutableLiveData<UsersResponse>()
 
     fun searchUser(searchViewString: String) {
         ApiConfig.getApiSercive().searchUsers(searchViewString)
             .enqueue(object : Callback<UsersResponse> {
-                override fun onResponse(
-                    call: Call<UsersResponse>,
-                    response: Response<UsersResponse>
-                ) {
+                override fun onResponse(call: Call<UsersResponse>, response: Response<UsersResponse>) {
                     listUser.value = response.body()
                 }
 
@@ -30,4 +28,5 @@ class SearchUserViewModel : ViewModel() {
     }
 
     fun getSearchUser(): LiveData<UsersResponse> = listUser
+
 }

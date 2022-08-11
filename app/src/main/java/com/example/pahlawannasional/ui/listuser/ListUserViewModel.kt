@@ -17,11 +17,8 @@ class ListUserViewModel : ViewModel() {
     fun getListUser() {
         ApiConfig.getApiSercive().getListUsers()
             .enqueue(object : Callback<List<UsersResponseItem>> {
-                override fun onResponse(
-                    call: Call<List<UsersResponseItem>>,
-                    //data sudah berada di parameter response ketika fungsi getListUser() dipanggil
-                    response: Response<List<UsersResponseItem>>
-                ) {
+                //data sudah berada di parameter response ketika fungsi getListUser() dipanggil
+                override fun onResponse(call: Call<List<UsersResponseItem>>, response: Response<List<UsersResponseItem>>) {
                     //mengisi listUser Yang masih kosong dengan data Response
                     listUser.postValue(response.body())
                 }
@@ -29,7 +26,6 @@ class ListUserViewModel : ViewModel() {
                 override fun onFailure(call: Call<List<UsersResponseItem>>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
-
             })
     }
 

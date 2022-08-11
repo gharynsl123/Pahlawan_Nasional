@@ -11,17 +11,16 @@ class DetailActivity : AppCompatActivity() {
 
     private var _binding: ActivityDetailBinding? = null
     private val binding get() = _binding as ActivityDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
         val data = intent.getParcelableExtra<DaftarPahlawan>(DETAIL_KEY) as DaftarPahlawanItem
 
         supportActionBar?.title = data.nama
-        Glide.with(this).load(data.img).into(binding.imgHeroDetail)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.apply {
             tvAsalDetail.text = data.asal
@@ -32,9 +31,9 @@ class DetailActivity : AppCompatActivity() {
             tvLahirDetail.text = data.lahir
             tvUsiaDetail.text = data.usia
             lokasiMakamDetail.text = data.lokasimakam
+
+            Glide.with(imgHeroDetail).load(data.img).into(imgHeroDetail)
         }
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
