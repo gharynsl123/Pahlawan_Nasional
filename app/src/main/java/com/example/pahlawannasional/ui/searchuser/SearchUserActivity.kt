@@ -1,22 +1,46 @@
 package com.example.pahlawannasional.ui.searchuser
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
-import com.example.pahlawannasional.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pahlawannasional.databinding.ActivitySearchUserBinding
 
 class SearchUserActivity : AppCompatActivity() {
+
+    private var _binding : ActivitySearchUserBinding? = null
+    private val binding get() = _binding as ActivitySearchUserBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search_user)
+        _binding = ActivitySearchUserBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val searchViewString = "Lala"
 
         val viewModel = ViewModelProvider(this)[SearchUserViewModel::class.java]
-        viewModel.searchUser(searchViewString)
+
+        binding.apply {
+            svUser.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    query?.let {
+                        viewModel.searchUser(it)
+                    }
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return false
+                }
+
+            })
+        }
         viewModel.getSearchUser().observe(this) {
-            Log.i("DATA", "onCreate: $it, Nama Usernya -----> ${it.items?.get(0)?.login}")
+            binding.rvSearchUser.apply {
+                adapter = it.items?.let { it1 -> SearchUserAdapter(it1) }
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(this@SearchUserActivity)
+
+            }
         }
     }
 }

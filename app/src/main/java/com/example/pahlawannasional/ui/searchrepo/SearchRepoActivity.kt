@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pahlawannasional.data.respone.RepoResponeItem
 import com.example.pahlawannasional.databinding.ActivitySearchRepoBinding
 
 class SearchRepoActivity : AppCompatActivity() {
@@ -40,17 +39,13 @@ class SearchRepoActivity : AppCompatActivity() {
 
         viewModel.apply {
             getSearchRepo().observe(this@SearchRepoActivity) {
-                it.items?.let { it1 -> showData(it1) }
+                binding.rvSearchRepo.apply {
+                    adapter = it.items?.let { it1 -> SearchRepoAdapter(it1) }
+                    setHasFixedSize(true)
+                    layoutManager = LinearLayoutManager(this@SearchRepoActivity)
+
+                }
             }
-        }
-    }
-
-    private fun showData(it: List<RepoResponeItem>) {
-        binding.rvSearchRepo.apply {
-            adapter = SearchRepoAdapter(it)
-            setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(this@SearchRepoActivity)
-
         }
     }
 }

@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pahlawannasional.data.respone.RepoResponeItem
 import com.example.pahlawannasional.databinding.RowItemRepoBinding
 
-class SearchRepoAdapter(
-    var listRepoUser: List<RepoResponeItem>
-) : RecyclerView.Adapter<SearchRepoAdapter.MyRepoHolder>() {
+class SearchRepoAdapter(var listRepoUser: List<RepoResponeItem>) : RecyclerView.Adapter<SearchRepoAdapter.MyRepoHolder>() {
     inner class MyRepoHolder(val binding: RowItemRepoBinding) :
         RecyclerView.ViewHolder(binding.root)
 
